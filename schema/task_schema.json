@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Task",
+  "description": "Schema for task documents in Firestore",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "completed": {
+      "description": "Whether the task is completed",
+      "type": "boolean"
+    },
+    "created": {
+      "description": "Time when the task was created",
+      "type": "string",
+      "format": "date-time"
+    },
+    "details": {
+      "description": "Optional details/notes about the task",
+      "type": "string"
+    },
+    "title": {
+      "description": "Task title",
+      "type": "string",
+      "minLength": 1
+    },
+    "users": {
+      "description": "Reference to the user who owns this task (Firestore document path)",
+      "type": "string",
+      "pattern": "^/users/[A-Za-z0-9_-]+$"
+    }
+  },
+  "required": ["completed", "created", "title", "users"],
+  "examples": [
+    {
+      "completed": false,
+      "created": "2025-09-24T03:23:31-04:00",
+      "details": "Deadline on the 20th September.",
+      "title": "1. Turning in your CSC305 Assignment 3",
+      "users": "/users/vJisXqesGJS3dH8P773isMSGf043"
+    }
+  ]
+}
