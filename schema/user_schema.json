@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "User",
+  "description": "Schema for user documents in Firestore",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "birthday": {
+      "description": "The user's birthday",
+      "type": "string",
+      "format": "date-time"
+    },
+    "created_time": {
+      "description": "Time when the user document was created",
+      "type": "string",
+      "format": "date-time"
+    },
+    "display_name": {
+      "description": "User's display name",
+      "type": "string",
+      "minLength": 1
+    },
+    "email": {
+      "description": "User's email address",
+      "type": "string",
+      "format": "email"
+    },
+    "photo_url": {
+      "description": "URL of the user's profile photo",
+      "type": "string",
+      "format": "uri"
+    },
+    "uid": {
+      "description": "Unique identifier for the user (also used as doc id)",
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": ["created_time", "display_name", "email", "uid"],
+  "examples": [
+    {
+      "birthday": "2003-12-10T00:00:00-05:00",
+      "created_time": "2025-09-23T23:42:23-04:00",
+      "display_name": "Johsua.edu",
+      "email": "johsua.maniagasi@uri.edu",
+      "photo_url": "https://firebasestorage.googleapis.com/v0/...",
+      "uid": "vJisXqesGJS3dH8P773isMSGf043"
+    }
+  ]
+}
