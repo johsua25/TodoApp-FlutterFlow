@@ -151,6 +151,7 @@ class _TasksWidgetState extends State<TasksWidget> {
 
                     return ListView.separated(
                       padding: EdgeInsets.zero,
+                      shrinkWrap: true,
                       scrollDirection: Axis.vertical,
                       itemCount: listViewTasksRecordList.length,
                       separatorBuilder: (_, __) => SizedBox(height: 12.0),
